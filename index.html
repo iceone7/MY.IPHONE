@@ -9,9 +9,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
 </head>
 <body>
+    <div class="advertising">
+        <div class="ad-banner">
+            <button class="close-btn" onclick="closeBanner()"><i class='bx bx-x'></i></button>
+            <img src="./img/Advertising-Christmas.jpg" alt="Advertisement">
+        </div>
+    </div>
     <header class="header">
         <div class="header-section-1">
             <a href="#section-1">About Us</a>
@@ -22,7 +27,7 @@
         <div class="header-section-2">
             <i class='bx bx-shopping-bag' id="cart-icon"></i>
             <div class="cart">
-                <h2 class="cart-title">Your Cart</h2>
+                <h2 class="cart-title">Items in your bag </h2>
                 <div class="cart-content">
 
                 </div>
@@ -34,9 +39,10 @@
                         $0
                     </div>
                 </div>
-                <button type="button" class="btn-buy">Buy Now</button>
+                <button type="button" class="btn-buy">PROCCED TO BAG</button>
                 <i class='bx bx-x' id="close-cart"></i>
             </div>
+            <div class="product-title-img"></div>
         </div>
     </header>
     <section class="main">
@@ -50,14 +56,14 @@
         <div class="shop-content">
 
             <div class="product-box">
-                <img src="./img/iPhone15.jfif" alt="" class="product-img">
+                <img src="./img/iPhone15.jfif"alt="Product 1" class="product-img">
                 <h2 class="product-title">iPhone 15</h2>
                 <span class="price">$799</span>
                 <i class='bx bx-shopping-bag add-cart'></i>
             </div>
 
             <div class="product-box">
-                <img src="./img/iPhone15-Pro.jfif" alt="" class="product-img">
+                <img src="./img/iPhone15-Pro.jfif" alt="Product 2" class="product-img">
                 <h2 class="product-title">iPhone 15 Pro</h2>
                 <span class="price">$999</span>
                 <i class='bx bx-shopping-bag add-cart'></i>
@@ -149,6 +155,7 @@
         <div class="main-item">
             <div class="product-box">
                 <img id="product-image" src="" alt="">
+                <div class="product-title-img"></div>
                 <h2 id="product-title" class="product-title"></h2>
                 <span id="price" class="price"></span>
                 <i class='bx bx-shopping-bag add-cart'></i>
@@ -306,5 +313,6 @@
     <script src="./JavaScript/slider.js"></script>
     <script src="./JavaScript/view.js"></script>
     <script src="./JavaScript/add-cart.js"></script>
+    <script src="./JavaScript/Advertising.js"></script>
 </body>
 </html>

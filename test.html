@@ -7,57 +7,64 @@
     <link rel="stylesheet" href="./test.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="./index.php">
-</head>
-<body>
-	<form>
-        <div class="container">
-            <h2>Форма для отправки на почту</h2>
-            <form id="emailForm">
-              <input type="text" id="name" placeholder="Ваше имя" required>
-              <input type="email" id="email" placeholder="Ваш Email" required>
-              <textarea id="message" placeholder="Сообщение" required></textarea>
-              <button type="submit">Отправить</button>
-            </form>
-            <p id="statusMessage"></p>
-          </div>
-	<script>
-        document.addEventListener('DOMContentLoaded', function() {
-  const emailForm = document.getElementById('emailForm');
-  const statusMessage = document.getElementById('statusMessage');
-
-  emailForm.addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
-
-    // Создаем объект FormData и добавляем поля формы в него.
-    const formData = new FormData();
-    formData.append('name', name);
-    formData.append('email', email);
-    formData.append('message', message);
-
-    // Отправляем данные на сервер с помощью AJAX-запроса.
-    fetch('https://api.jakubkowalczyk.pl/send/mail', {
-      method: 'POST',
-      body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-      if (data.status === 'success') {
-        statusMessage.textContent = 'Сообщение успешно отправлено.';
-        emailForm.reset(); // Очистить форму после успешной отправки.
-      } else {
-        statusMessage.textContent = 'Ошибка при отправке сообщения. Попробуйте позже.';
+    <style>
+      /* Styling for the banner */
+      #ad-banner {
+        width: 300px;
+        height: 200px;
+        overflow: hidden;
+        position: relative;
+        border: 1px solid #ddd;
       }
-    })
-    .catch(error => {
-      statusMessage.textContent = 'Ошибка при отправке сообщения. Попробуйте позже.';
-    });
-  });
-});
+  
+      /* Styling for the individual messages */
+      .ad-message {
+        width: 100%;
+        height: 100%;
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        text-align: center;
+      }
 
-    </script>
+
+
+</style>
+<body>
+
+  <div id="ad-banner">
+  <!-- Messages go here -->
+  <div class="ad-message">
+
+    <img src="./img/Apple iPhone 13 - Features, Specs & Reviews _ AT&T.jpg" alt="Special Offer Image">
+  </div>
+  <div class="ad-message" style="background-color: #33cc33;">
+
+    <img src="new_arrivals_image.jpg" alt="New Arrivals Image">
+  </div>
+  <div class="ad-message" style="background-color: #3366cc;">
+    <img src="free_shipping_image.jpg" alt="Free Shipping Image">
+  </div>
+</div>
+<script>
+  // JavaScript for rotating through messages
+  const banner = document.getElementById('ad-banner');
+  const messages = document.querySelectorAll('.ad-message');
+  let currentMessage = 0;
+
+  function showNextMessage() {
+    messages.forEach(message => {
+      message.style.display = 'none';
+    });
+
+    messages[currentMessage].style.display = 'block';
+
+    currentMessage = (currentMessage + 1) % messages.length;
+  }
+
+  // Change message every 3 seconds (3000 milliseconds)
+  setInterval(showNextMessage, 3000);
+</script>
 </body>
 </html>
