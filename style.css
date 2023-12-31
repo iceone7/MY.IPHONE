@@ -135,7 +135,7 @@ body .cart {
     justify-content: flex-end;
     margin-top: 1.5rem;
     border-top: 1px solid #000;
-    padding-top: 0.5rem; /* Added padding-top for better spacing */
+    padding-top: 0.5rem;
 }
 
 .total-title {
@@ -304,8 +304,15 @@ body .cart {
     margin-bottom: 0.5rem;
 }
 
+.product-box del {
+    font-size: 14px;
+    color: red;
+}
+
 .price {
-    font-weight: 500;
+    display: flex;
+    font-weight: bold;
+    font-size: 18px;
 }
 
 .add-cart {
