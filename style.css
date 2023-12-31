@@ -305,12 +305,12 @@ body .cart {
 }
 
 .product-box del {
+    display: block;
     font-size: 14px;
     color: red;
 }
 
 .price {
-    display: flex;
     font-weight: bold;
     font-size: 18px;
 }
@@ -530,7 +530,7 @@ body .cart {
 
 .information-3 {
     display: flex;
-    align-content: center;
+    align-items: center;
     justify-content: center;
     gap: 15px;
     margin-top: 50px;
@@ -920,8 +920,8 @@ body .cart {
     }
 
     .price {
-        font-weight: 500;
-        font-size: 0.9rem;
+        font-weight: bold;
+        font-size: 1rem;
     }
 
     .add-cart {
@@ -1078,8 +1078,8 @@ body .cart {
     }
 
     .ad-banner {
-        width: 80%;
-        height: 100%;
+        width: 1050px;
+        margin: 10px;
         border-radius: 10px;
     }
 
@@ -1091,10 +1091,64 @@ body .cart {
         height: 140px;
     }
 
+    /* .ad-banner {
+        width: 80%;
+        height: 100%;
+        border-radius: 10px;
+    }
+
+    .ad-banner img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 1050px;
+        height: 140px;
+    } */
+
     .close-btn {
         top: 5px;
         right: 5px;
         font-size: 16px;
         padding: 4px;
+    }
+
+    .Materials {
+        padding: 30px 15px 30px 15px;
+    }
+
+    .text-b b {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .Materials-Comfort-Simplicity {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .information-1,
+    .information-2,
+    .information-3 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .information-2 {
+        margin-left: 20px;
+    }
+
+    .information-3 {
+        margin-left: 0;
+        margin-left: 20px;
+    }
+
+    .Materials-Comfort-Simplicity-img img {
+        display: none;
+    }
+
+    .slider {
+        padding: 0px 20px;
     }
 }
