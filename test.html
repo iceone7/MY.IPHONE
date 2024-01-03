@@ -7,64 +7,68 @@
     <link rel="stylesheet" href="./test.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="./index.php">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <script src="https://kit.fontawesome.com/1cf483120b.js" crossorigin="anonymous"></script>    
+<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAi0RCj8aLdKFX-cvYkW6kDveuaUlMnpes&libraries=places&callback=initMap"></script> 
     <style>
-      /* Styling for the banner */
-      #ad-banner {
-        width: 300px;
-        height: 200px;
-        overflow: hidden;
-        position: relative;
-        border: 1px solid #ddd;
-      }
-  
-      /* Styling for the individual messages */
-      .ad-message {
-        width: 100%;
-        height: 100%;
-        display: none;
-        position: absolute;
-        top: 0;
-        left: 0;
-        text-align: center;
-      }
 
+.search {
+    position: relative;
+    height: 50px;
+}
 
+.search .input {
+    background-color: #fff;
+    border: 0;
+    font-size: 18px;
+    padding: 15px;
+    height: 50px;
+    width: 50px;
+    transition: width 0.3s ease;
+}
 
+.btn {
+    background-color: #fff;
+    border: 0;
+    cursor: pointer;
+    font-size: 24px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50px;
+    width: 50px;
+    transition: transform 0.3s ease;
+}
+
+.btn:focus,
+.input:focus {
+    outline: none;
+}
+
+.search.active .input {
+    width: 200px;
+}
+
+.search.active .btn {
+    transform: translateX(198px);
+}
 </style>
 <body>
-
-  <div id="ad-banner">
-  <!-- Messages go here -->
-  <div class="ad-message">
-
-    <img src="./img/Apple iPhone 13 - Features, Specs & Reviews _ AT&T.jpg" alt="Special Offer Image">
-  </div>
-  <div class="ad-message" style="background-color: #33cc33;">
-
-    <img src="new_arrivals_image.jpg" alt="New Arrivals Image">
-  </div>
-  <div class="ad-message" style="background-color: #3366cc;">
-    <img src="free_shipping_image.jpg" alt="Free Shipping Image">
-  </div>
-</div>
-<script>
-  // JavaScript for rotating through messages
-  const banner = document.getElementById('ad-banner');
-  const messages = document.querySelectorAll('.ad-message');
-  let currentMessage = 0;
-
-  function showNextMessage() {
-    messages.forEach(message => {
-      message.style.display = 'none';
-    });
-
-    messages[currentMessage].style.display = 'block';
-
-    currentMessage = (currentMessage + 1) % messages.length;
-  }
-
-  // Change message every 3 seconds (3000 milliseconds)
-  setInterval(showNextMessage, 3000);
-</script>
+  <div class="search">
+    <input type="text" class="input" placeholder="Search...">
+    <button class="btn">
+    <i class="fas fa-search"></i>
+    </button>
+    </div>
+    
+    <script>
+const search = document.querySelector('.search')
+const btn = document.querySelector('.btn')
+const input = document.querySelector('.input')
+btn.addEventListener('click', () => {
+search.classList.toggle('active')
+input.focus()
+})
+    </script>
 </body>
 </html>

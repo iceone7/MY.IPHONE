@@ -4,17 +4,29 @@ var productImage = document.getElementById("product-image");
 var productTitle = document.getElementById("product-title");
 var productPrice = document.getElementById("price");
 
+var viewedProducts = [];
+
 for (var i = 0; i < products.length; i++) {
   products[i].addEventListener("click", function(event) {
     var clickedProduct = event.currentTarget;
 
-    var imageSrc = clickedProduct.querySelector("img").src;
-    var title = clickedProduct.querySelector("h2").textContent;
-    var price = clickedProduct.querySelector("span").textContent;
+    var imageSrc = clickedProduct.querySelector(".product-img").src;
+    var title = clickedProduct.querySelector(".product-title").textContent;
+    var originalPrice = clickedProduct.querySelector("del").textContent;
+    var discountedPrice = clickedProduct.querySelector(".price").textContent;
+
+    var viewedProduct = {
+      imageSrc: imageSrc,
+      title: title,
+      originalPrice: originalPrice,
+      discountedPrice: discountedPrice
+    };
+
+    viewedProducts.push(viewedProduct);
 
     productImage.src = imageSrc;
     productTitle.textContent = title;
-    productPrice.textContent = price;
+    productPrice.innerHTML = `<del>${originalPrice}</del> ${discountedPrice}`;
 
     productDetails.classList.remove("hidden");
   });
