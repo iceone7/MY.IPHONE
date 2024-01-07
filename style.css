@@ -76,6 +76,32 @@
     font-size: 20px;
 }
 
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    width: 30px;
+    height: 4px;
+    background-color: #333;
+    margin: 3px 0;
+}
+
+.menu-items {
+    display: flex;
+    align-items: center;
+}
+
+.menu-items a {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 20px;
+    margin-right: 20px;
+}
+
 .header-section-2 {
     display: flex;
     align-items: center;
@@ -914,6 +940,29 @@ body .cart {
 
     .header-section-1 a {
         font-size: 16px;
+    }
+
+    .hamburger-menu {
+        display: flex;
+    }
+
+    .menu-items {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .menu-items a {
+        margin: 10px 0;
+    }
+
+    .show-menu {
+        display: flex;
     }
 
     .product-box {
